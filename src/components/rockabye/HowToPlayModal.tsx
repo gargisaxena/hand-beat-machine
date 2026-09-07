@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { ArcadeButton } from "./ArcadeButton";
 
 const RULES = [
   { emoji: "✊", label: "ROCK", note: "Closed fist" },
