@@ -15,17 +15,17 @@ function dist(a: Landmark, b: Landmark) {
  */
 export function classifyGesture(lm: Landmark[]): Move | null {
   if (!lm || lm.length < 21) return null;
-  const wrist = lm[0];
-  const scale = dist(wrist, lm[9]) || 1; // wrist -> middle MCP
+  const wrist = lm[0]!;
+  const scale = dist(wrist, lm[9]!) || 1; // wrist -> middle MCP
 
   const extended = (tip: number, pip: number) =>
-    dist(wrist, lm[tip]) / scale > dist(wrist, lm[pip]) / scale + 0.28;
+    dist(wrist, lm[tip]!) / scale > dist(wrist, lm[pip]!) / scale + 0.28;
 
   const index = extended(TIPS.index, PIPS.index);
   const middle = extended(TIPS.middle, PIPS.middle);
   const ring = extended(TIPS.ring, PIPS.ring);
   const pinky = extended(TIPS.pinky, PIPS.pinky);
-  const thumb = dist(lm[TIPS.thumb], lm[PIPS.pinky]) / scale > 0.9;
+  const thumb = dist(lm[TIPS.thumb]!, lm[PIPS.pinky]!) / scale > 0.9;
 
   const fingers = [index, middle, ring, pinky].filter(Boolean).length;
 

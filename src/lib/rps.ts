@@ -16,7 +16,7 @@ export const MOVE_LABEL: Record<Move, string> = {
 export const MOVES: Move[] = ["rock", "paper", "scissors"];
 
 export function randomMove(): Move {
-  return MOVES[Math.floor(Math.random() * MOVES.length)];
+  return MOVES[Math.floor(Math.random() * MOVES.length)]!;
 }
 
 export function judge(player: Move, machine: Move): Outcome {
