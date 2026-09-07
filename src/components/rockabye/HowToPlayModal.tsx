@@ -61,13 +61,15 @@ export function HowToPlayModal({ open, onClose }: { open: boolean; onClose: () =
         </p>
 
         <div className="mt-6 flex justify-end">
-          <ArcadeButton ref={undefined} variant="cyan" onClick={onClose}>
-            <span ref={undefined}>CLOSE</span>
-          </ArcadeButton>
+          <button
+            ref={closeRef}
+            onClick={onClose}
+            className="font-display border border-accent/60 bg-accent/10 px-6 py-3 text-xs tracking-[0.22em] text-accent uppercase transition-colors hover:bg-accent/20"
+          >
+            CLOSE
+          </button>
         </div>
-        <button ref={closeRef} className="sr-only" onClick={onClose}>
-          Close briefing
-        </button>
+
       </div>
     </div>
   );
