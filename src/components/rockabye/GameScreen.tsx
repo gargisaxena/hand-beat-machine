@@ -159,7 +159,7 @@ export function GameScreen({ onQuit }: { onQuit: (stats: RunStats) => void }) {
         </dl>
       </header>
 
-      <div className="mt-5 grid flex-1 grid-cols-1 items-stretch gap-4 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mt-5 grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
         {/* Player */}
         <div className="hud-panel scanlines relative overflow-hidden">
           <div className="flex items-center justify-between px-4 py-2">
